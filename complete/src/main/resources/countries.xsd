@@ -9,7 +9,26 @@
         </xs:complexType>
     </xs:element>
     
+    <xs:element name="getCountriesRequest">
+    	<xs:complexType>
+    	</xs:complexType>
+    </xs:element>
     
+    <xs:element name="addCountryRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="name" type="xs:string"/>
+                <xs:element name="population" type="xs:int"/>
+                <xs:element name="capital" type="xs:string"/>
+                <xs:element name="currency" type="tns:currency"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="addCountryResponse">
+        <xs:complexType>
+        </xs:complexType>
+    </xs:element>
 
     <xs:element name="getCountryResponse">
         <xs:complexType>

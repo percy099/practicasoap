@@ -49,7 +49,18 @@ public class CountryRepository {
 		return countries.get(name);
 	}
 	
-	public List<Country> getCountries(){
-		return countries.entrySet().stream().map(k -> k.getValue()).collect(Collectors.toList());
+	public void getCountries(List<Country> countriesData){
+		for(Country country : countries.entrySet().stream().map(k -> k.getValue()).collect(Collectors.toList())) {
+			countriesData.add(country);
+		}
+	}
+	
+	public void addCountry(String name, int population, String capital, Currency currency) {
+		Country country = new Country();
+		country.setName(name);
+		country.setCapital(capital);
+		country.setCurrency(currency);
+		country.setPopulation(population);
+		countries.put(country.getName(), country);
 	}
 }
